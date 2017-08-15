@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Medical Provider Search</title>
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<body onload="$('#tabState').hide();">
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <h1 class="title">Medical Provider Search</h1>
+           </header>
+        </div>
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+		
+ 			<div class="form-item-first">
+				<label class="control-label highlight">Demo Version: </label>
+				<span class="highlight">Partial NY state only</span>
+			</div>
+			<form id="myForm">
+			<div class="form-item-first">
+				<label for="npi" class="control-label" >NPI Number :</label>
+				<input type="text" id="npi" name="npi" class="control" maxlength="10"/>
+				<span class="error-msg" id="npi-error"></span>
+			</div>
+			<div class="form-item bigOR">
+			OR
+			</div>
+			<div class="form-item">
+				<label for="name" class="control-label">Name :</label>
+				<input type="text" id="name" name="name" class="control"/><br />
+				<label class="control-label"> </label>
+				<span class="underText">Last, First or Organization name</span>
+			</div>
+			<div class="form-item">
+				<label class="control-label">Type :</label>
+				<input type="radio" name="type" value="1" checked="checked" />
+				<label class="radio-label">Individual</label>
+				<input type="radio" name="type" value="2" />
+				<label class="radio-label">Organization</label>
+			</div>
+			<div class="form-item">
+					<label class="control-label">Location(s) :</label>
+					<input type="checkbox" disabled="disabled" name="state" value="**" />      <label class="checkbox-label">All States</label>
+					<input id="show_states" class="btn-link" type="button" value="Show States">
+			</div>
+			<div class="form-item">
+					<label class="control-label">  </label>
+					<table class="state" id="tabState">
+					<tr>
+					<td><input type="checkbox" name="state" disabled="disabled" value="AK"/>      <label class="checkbox-label">AK</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="AL"/>      <label class="checkbox-label">AL</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="AR"/>      <label class="checkbox-label">AR</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="AZ"/>      <label class="checkbox-label">AZ</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="CA"/>      <label class="checkbox-label">CA</label></td>
+					</tr>
+					<tr>
+					<td><input type="checkbox" name="state" disabled="disabled" value="CO"/>      <label class="checkbox-label">CO</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="CT"/>      <label class="checkbox-label">CT</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="DC"/>      <label class="checkbox-label">DC</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="DE"/>      <label class="checkbox-label">DE</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="FL"/>      <label class="checkbox-label">FL</label></td>
+					</tr>
+					<tr>
+					<td><input type="checkbox" name="state" disabled="disabled" value="GA"/>      <label class="checkbox-label">GA</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="HI"/>      <label class="checkbox-label">HI</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="IA"/>      <label class="checkbox-label">IA</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="ID"/>      <label class="checkbox-label">ID</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="IL"/>      <label class="checkbox-label">IL</label></td>
+					</tr>
+					<tr>
+					<td><input type="checkbox" name="state" disabled="disabled" value="IN"/>      <label class="checkbox-label">IN</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="KS"/>      <label class="checkbox-label">KS</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="KY"/>      <label class="checkbox-label">KY</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="LA"/>      <label class="checkbox-label">LA</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="MA"/>      <label class="checkbox-label">MA</label></td>
+					</tr>
+					<tr>
+					<td><input type="checkbox" name="state" disabled="disabled" value="MD"/>      <label class="checkbox-label">MD</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="ME"/>      <label class="checkbox-label">ME</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="MI"/>      <label class="checkbox-label">MI</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="MN"/>      <label class="checkbox-label">MN</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="MO"/>      <label class="checkbox-label">MO</label></td>
+					</tr>
+					<tr>
+					<td><input type="checkbox" name="state" disabled="disabled" value="MS"/>      <label class="checkbox-label">MS</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="MT"/>      <label class="checkbox-label">MT</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="NC"/>      <label class="checkbox-label">NC</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="ND"/>      <label class="checkbox-label">ND</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="NE"/>      <label class="checkbox-label">NE</label></td>
+					</tr>
+					<tr>
+					<td><input type="checkbox" name="state" disabled="disabled" value="NH"/>      <label class="checkbox-label">NH</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="NJ"/>      <label class="checkbox-label">NJ</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="NM"/>      <label class="checkbox-label">NM</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="NV"/>      <label class="checkbox-label">NV</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="NY" Checked="Checked" />      <label class="checkbox-label">NY</label></td>
+					</tr>
+					<tr>
+					<td><input type="checkbox" name="state" disabled="disabled" value="OH"/>      <label class="checkbox-label">OH</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="OK"/>      <label class="checkbox-label">OK</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="OR"/>      <label class="checkbox-label">OR</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="PA"/>      <label class="checkbox-label">PA</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="PR"/>      <label class="checkbox-label">PR</label></td>
+					</tr>
+					<tr>
+					<td><input type="checkbox" name="state" disabled="disabled" value="RI"/>      <label class="checkbox-label">RI</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="SC"/>      <label class="checkbox-label">SC</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="SD"/>      <label class="checkbox-label">SD</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="TN"/>      <label class="checkbox-label">TN</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="TX"/>      <label class="checkbox-label">TX</label></td>
+					</tr>
+					<tr>
+					<td><input type="checkbox" name="state" disabled="disabled" value="UT"/>      <label class="checkbox-label">UT</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="VA"/>      <label class="checkbox-label">VA</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="VT"/>      <label class="checkbox-label">VT</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="WA"/>      <label class="checkbox-label">WA</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="WI"/>      <label class="checkbox-label">WI</label></td>
+					</tr>
+					<tr>
+					<td><input type="checkbox" name="state" disabled="disabled" value="WV"/>      <label class="checkbox-label">WV</label></td>
+					<td><input type="checkbox" name="state" disabled="disabled" value="WY"/>      <label class="checkbox-label">WY</label></td>
+					<td colspan="2" class="highlight">Demo Version: NY only</td>
+					<td><input id="hide_states" class="btn-link" type="button" value="Hide States"></td>
+					</tr>
+					</table>
+
+			</div>
+			<div id="form-buttons" class="form-action">
+				<input id="clear_form" class="btn-clear" type="button" value="Clear">
+				<input id="submit_form" class="btn-search" type="button" value="Search">
+			</div>
+			<div class="form-item" id="results"></div>
+			</form>
+		
+			<div id="loader">
+				<img id="ajax-gif" src="http://coolthebeans.com/npi/images/ajax.gif" alt="Loading..."/>
+			</div>
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
